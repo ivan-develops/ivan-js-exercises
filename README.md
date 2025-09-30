@@ -19,6 +19,7 @@ Cada ejercicio está organizado en carpetas independientes, con su código y exp
 | Ejercicio | Descripción | Demo |
 |-----------|-------------|------|
 | **Invertir número** | Ingresar número, invertir el orden de sus dígitos. | [Ver Demo](#) |
+| **Modal** | Abrir modal en la interfaz | [Ver Demo](#) |
 
 ---
 
