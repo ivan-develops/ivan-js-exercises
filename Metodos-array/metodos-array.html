@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Métodos array</title>
+	<style>body{background: #999}</style>
+</head>
+<body>
+	<h1>🎯 Objetivo:</h1>
+
+	<ul>
+		<li>Filrar solo las ventas mayores o iguales a $90.000.</li>
+
+		<li>Crear un nuevo arreglo con los nombres de los vendedores de esas ventas, en mayúsculas.</li>
+
+		<li>Calcular el total vendido entre esas ventas filtradas.</li>
+	</ul>
+
+	
+
+	<script>
+		const ventas = [
+		  { dia: 'Lunes', valor: 120000, vendedor: 'Ana' },
+		  { dia: 'Martes', valor: 80000, vendedor: 'Iván' },
+		  { dia: 'Miércoles', valor: 95000, vendedor: 'Ana' },
+		  { dia: 'Jueves', valor: 70000, vendedor: 'Carlos' },
+		  { dia: 'Viernes', valor: 130000, vendedor: 'Iván' },
+		];		
+		
+		const mayoresVentas = ventas.filter(v => v.valor>=90000);
+		const mejoresVendedores = mayoresVentas.map(vend => vend.vendedor.toUpperCase());
+		const total = mayoresVentas.reduce((acum, val) => acum+val.valor, 0);
+
+		console.log('Vendedores con ventas superiores a $90.000 durante la semana: ');
+
+		mayoresVentas.forEach(venta => {
+			console.log(venta.vendedor + ', el día ' + venta.dia + ' por un valor de $' + venta.valor);
+		});
+		console.log('TOTAL de estas ventas = $' + total);
+	</script>
+</body>
+</html>
