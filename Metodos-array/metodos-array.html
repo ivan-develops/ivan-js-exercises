@@ -8,18 +8,16 @@
 </head>
 <body>
 	<h1>🎯 Objetivo:</h1>
-
 	<ul>
 		<li>Filrar solo las ventas mayores o iguales a $90.000.</li>
-
 		<li>Crear un nuevo arreglo con los nombres de los vendedores de esas ventas, en mayúsculas.</li>
-
 		<li>Calcular el total vendido entre esas ventas filtradas.</li>
 	</ul>
 
-	
+	<div class="contenedor" id="contenedor"></div>
 
 	<script>
+		const contenedor = document.getElementById('contenedor');
 		const ventas = [
 		  { dia: 'Lunes', valor: 120000, vendedor: 'Ana' },
 		  { dia: 'Martes', valor: 80000, vendedor: 'Iván' },
@@ -38,6 +36,16 @@
 			console.log(venta.vendedor + ', el día ' + venta.dia + ' por un valor de $' + venta.valor);
 		});
 		console.log('TOTAL de estas ventas = $' + total);
+
+		// Imprimiendo en document
+
+		imprimir = document.createElement('div');
+		imprimir.innerHTML = `
+			<p>Vendedores con ventas superiores a $90.000 durante la semana: </p>
+
+		`;
+		contenedor.appendChild(imprimir);
+
 	</script>
 </body>
 </html>
