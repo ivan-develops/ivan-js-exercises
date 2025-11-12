@@ -27,13 +27,11 @@
     // Muestra en consola el nombre del vendedor, producto y total de cada venta
 
     const ventasBogota = ventas.filter( ({vendedor:{ciudad}}) => ciudad === 'Bogotá');
-
     const valorVentas = ventas.map( ({productos:[{precio , cantidad}]} ) => precio * cantidad);
-
     const valorVentaBogota = ventasBogota.reduce((acum , {productos:[{precio , cantidad}]}) => acum + (precio*cantidad) , 0);
 
-    console.log(ventasBogota);
-    console.log(valorVentas);
+    console.log('Ventas realizadas en Bogotá: ' , ventasBogota);
+    console.log('Valor individuald e cada venta:  ' , valorVentas);
     console.log(`Total recaudado en ventas en Bogotá: $${valorVentaBogota}`);
 
     ventas.forEach(v => {

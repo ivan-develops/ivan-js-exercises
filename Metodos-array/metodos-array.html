@@ -17,7 +17,7 @@
 	<div class="contenedor" id="contenedor"></div>
 
 	<script>
-		const contenedor = document.getElementById('contenedor');
+		
 		const ventas = [
 		  { dia: 'Lunes', valor: 120000, vendedor: 'Ana' },
 		  { dia: 'Martes', valor: 80000, vendedor: 'Iván' },
@@ -37,15 +37,8 @@
 		});
 		console.log('TOTAL de estas ventas = $' + total);
 
-		// Imprimiendo en document
 
-		imprimir = document.createElement('div');
-		imprimir.innerHTML = `
-			<p>Vendedores con ventas superiores a $90.000 durante la semana: </p>
-
-		`;
-		contenedor.appendChild(imprimir);
-
+		
 	</script>
 </body>
 </html>
