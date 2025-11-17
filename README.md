@@ -20,7 +20,7 @@ Cada ejercicio está organizado en carpetas independientes, con su código y exp
 |-----------|-------------|------|
 | **Invertir número** | Ingresar número, invertir el orden de sus dígitos. | [Ver Demo](#) |
 | **Modal** | Abrir modal en la interfaz | [Ver Demo](#) |
-| **Métodos array** | Ejercicio `filter`, `map`, `reduce` | [Ver Demo](#) |
+| **Métodos array y objetos** | Ejercicio `filter`, `map`, `reduce`, `import/export` | [Ver Demo](#) |
 
 ---
 

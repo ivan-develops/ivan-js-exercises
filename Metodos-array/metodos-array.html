@@ -7,38 +7,19 @@
 	<style>body{background: #999}</style>
 </head>
 <body>
-	<h1>🎯 Objetivo:</h1>
-	<ul>
-		<li>Filrar solo las ventas mayores o iguales a $90.000.</li>
-		<li>Crear un nuevo arreglo con los nombres de los vendedores de esas ventas, en mayúsculas.</li>
-		<li>Calcular el total vendido entre esas ventas filtradas.</li>
-	</ul>
 
-	<div class="contenedor" id="contenedor"></div>
+	<h1>Arreglos y Objetos</h1>
+	<ol>
+		<li>Filter | map | reduce</li>
+		<!-- <script defer src="01_filterMapReduce.js"></script> -->
 
-	<script>
-		
-		const ventas = [
-		  { dia: 'Lunes', valor: 120000, vendedor: 'Ana' },
-		  { dia: 'Martes', valor: 80000, vendedor: 'Iván' },
-		  { dia: 'Miércoles', valor: 95000, vendedor: 'Ana' },
-		  { dia: 'Jueves', valor: 70000, vendedor: 'Carlos' },
-		  { dia: 'Viernes', valor: 130000, vendedor: 'Iván' },
-		];		
-		
-		const mayoresVentas = ventas.filter(v => v.valor>=90000);
-		const mejoresVendedores = mayoresVentas.map(vend => vend.vendedor.toUpperCase());
-		const total = mayoresVentas.reduce((acum, val) => acum+val.valor, 0);
+		<li>Destructuring con métodos de objetos y arreglos.</li>
+		<!-- <script defer src="02_destructuringYMetodos.js"></script> -->
 
-		console.log('Vendedores con ventas superiores a $90.000 durante la semana: ');
+		<li>Importar / exportar módulos.</li>
+		<script defer src="03_modulos.js"></script>
 
-		mayoresVentas.forEach(venta => {
-			console.log(venta.vendedor + ', el día ' + venta.dia + ' por un valor de $' + venta.valor);
-		});
-		console.log('TOTAL de estas ventas = $' + total);
+	</ol>
 
-
-		
-	</script>
 </body>
 </html>

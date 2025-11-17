@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destructuring + Métodos array</title>
-</head>
-<body>
-
-  <script>
-    
-    const ventas = [
+ const ventas = [
       { id: 1, vendedor: { nombre: 'Ana', ciudad: 'Bogotá' }, productos: [{ nombre: 'Manzana', precio: 2000, cantidad: 5 }] },
       { id: 2, vendedor: { nombre: 'Iván', ciudad: 'Medellín' }, productos: [{ nombre: 'Banano', precio: 1500, cantidad: 10 }] },
       { id: 3, vendedor: { nombre: 'Carlos', ciudad: 'Bogotá' }, productos: [{ nombre: 'Pera', precio: 1800, cantidad: 3 }] },
@@ -42,7 +31,3 @@
       
       console.log(`El vendedor ${nombreVendedor}, vendió ${nombreProducto} por un valor de $${precio*cantidad}`);
     });
-
-  </script>
-</body>
-</html>
