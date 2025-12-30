@@ -23,12 +23,13 @@ const lista = document.getElementById('lista');
 async function obtenerUsuarios() {
 
    lista.innerHTML = `🧨 Cargando...`;
+   boton.disabled = true; // Deshabilita el botón (para evitar seleccionar varias veces)
 
    try {
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
       
       if(!response.ok){
-         throw new Error('Error en la petición');
+         throw new Error('Error en la petición: ' + response.status + ' ' + response.statusText);
       }
 
       const usuarios = await response.json();
@@ -37,19 +38,22 @@ async function obtenerUsuarios() {
 
    } catch (error) {
       lista.innerHTML = `Falló API ⛔`;
-      console.error('falló la API: ' + error);
+      console.error('Falló la API: ' + error);
+   } finally {
+      boton.disabled = false;
    }
+
 }
 
 function mostrarUsuarios(usuariosObtenidos){
-console.log(usuariosObtenidos);
+
+   lista.innerHTML = ``;
 
    usuariosObtenidos.forEach(usuario => {
-      const enlistado = createElement('li');
+      const enlistado = document.createElement('li');
       
       enlistado.innerHTML = `
-      
-         ${usuario.name} <br> ${usuario.email}
+         ${usuario.name} <br> <span class="email">${usuario.email}</span>
       `;
       lista.appendChild(enlistado);
    });
