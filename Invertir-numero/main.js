@@ -1,34 +1,21 @@
-// let numeroEntero = 0;
+const btnInvertir = document.getElementById('btnInvertir');
+const inputNumero = document.getElementById('inputNumero');
+const outputs = document.getElementById('outputs');
 
-console.log(' //   Invertir dígitos de número entero   //');
-
-//* importamos el MÓDULO readline:
-const readline = require('readline');
-
-//* Crear interfaz de lectura/escritura:
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
-
-//* MÉTODO question() para hacer una pregunta y recibir la respuesta: 
-rl.question('Ingrese un número entero --> ' , (entrada)=>{
+btnInvertir.addEventListener( 'click' , () => {
+    const captura = inputNumero.value;
+    const valor = parseInt(captura);
     
-    const numero = parseInt(entrada);
-
-    if (isNaN(numero)) {
-        console.log("No escribiste un número válido ❌");
+    if(isNaN(valor)) {   /*Si no es número */
+        outputs.innerHTML = '✖ Dato inválido. <br>Recuerda ingresar un número entero';
     }
 
-    else {    
-        console.log(`El número ingresado es: ${numero}`);
-        console.log(`-------------------`);
-        const invertido = entrada.split("").reverse().join("");;
-        console.log(`Los digitos invertidos del número es ${invertido}`);
-    
-        console.log(`Variable repuesta es de tipo ${typeof entrada}`);
-        console.log(`Variable numero es de tipo ${typeof numero}`);
+    else {
+        let invertido = captura.split("").reverse().join("");
+        outputs.textContent = invertido;
     }
+    
+    console.log(`Variable captura es de tipo: ${typeof captura}`);
+    console.log(`Variable valor es de tipo: ${typeof valor}`);
 
-    rl.close(); // Cierra la interfaz una vez que recibes la respuesta
-})
+});
