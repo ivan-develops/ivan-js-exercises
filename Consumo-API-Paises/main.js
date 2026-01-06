@@ -15,7 +15,7 @@ async function consultarPaises() {
     contenedorPaises.innerHTML='<p>Cargando info...</p><img src="img/loading_gorilla.gif" class="loading_gorilla">'
 
     try{
-        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flag,capital'); 
+        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,capital,population'); 
 
         if(!response.ok) {
             throw new Error('error petición');
@@ -35,10 +35,10 @@ function renderizarPaises(paises) {
         const card = document.createElement('article');
         card.classList.add('card');
         card.innerHTML = `
-            <img src="${pais.flag}.svg  " alt="Bandera de ${pais.name.common}" class="bandera">
-            <h2 class="nombre">${pais.name.common}</h2>
+            <img src="${pais.flags.svg}" alt="Bandera de ${pais.name.common}" class="bandera">
+            <h3 class="nombre">${pais.name.common}</h3>
             <p>Capital: ${pais.capital}</p>
-            <p>Población: ${pais.population}</p>
+            <p>Población: ${pais.population.toLocaleString('es-CO')}</p>
         `;
 
         contenedorPaises.appendChild(card);
