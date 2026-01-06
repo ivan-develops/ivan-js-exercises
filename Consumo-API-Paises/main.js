@@ -3,6 +3,9 @@
 
 //Devuelve países reales con:
 //Nombre, Bandera, Capital, Región, Población.
+//Actualmente REST Countries devuelve 400 si no especificas los campos (fields) que quieres recibir.
+//Endpoint correcto (con fields):
+// https://restcountries.com/v3.1/all?fields=name,flags,capital,region,population
 
 const btnMostrar = document.getElementById('btnMostrar');
 const contenedorPaises = document.getElementById('contenedorPaises');
@@ -12,7 +15,7 @@ async function consultarPaises() {
     contenedorPaises.innerHTML='<p>Cargando info...</p><img src="img/loading_gorilla.gif" class="loading_gorilla">'
 
     try{
-        const response = await fetch('https://restcountries.com/v3.1/all');
+        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flag,capital'); 
 
         if(!response.ok) {
             throw new Error('error petición');
@@ -32,10 +35,10 @@ function renderizarPaises(paises) {
         const card = document.createElement('article');
         card.classList.add('card');
         card.innerHTML = `
-            <img src="${pais.flag.svg}" alt="Bandera de ${pais.name.common}" class="bandera">
+            <img src="${pais.flag}.svg  " alt="Bandera de ${pais.name.common}" class="bandera">
             <h2 class="nombre">${pais.name.common}</h2>
-            <p>${pais.capital}</p>
-            <p>${pais.population}</p>
+            <p>Capital: ${pais.capital}</p>
+            <p>Población: ${pais.population}</p>
         `;
 
         contenedorPaises.appendChild(card);
