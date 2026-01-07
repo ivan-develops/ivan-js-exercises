@@ -15,7 +15,7 @@ async function consultarPaises() {
     contenedorPaises.innerHTML='<p>Cargando info...</p><img src="img/loading_gorilla.gif" class="loading_gorilla">'
 
     try{
-        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,capital,population'); 
+        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,flags,capital,population,region'); 
 
         if(!response.ok) {
             throw new Error('error petición');
@@ -39,11 +39,10 @@ function renderizarPaises(paises) {
             <h3 class="nombre">${pais.name.common}</h3>
             <p>Capital: ${pais.capital}</p>
             <p>Población: ${pais.population.toLocaleString('es-CO')}</p>
+            <p>region: ${pais.region}</p>
         `;
-
         contenedorPaises.appendChild(card);
     });
-
 }
 
 btnMostrar.addEventListener( 'click' , consultarPaises );
